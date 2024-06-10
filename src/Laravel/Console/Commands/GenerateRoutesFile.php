@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 
 class GenerateRoutesFile extends Command
 {
@@ -30,7 +31,7 @@ class GenerateRoutesFile extends Command
             return count(array_intersect($middlewares, $route->middleware())) > 0;
         })->mapWithKeys(function ($route) {
             $name = $route->getName();
-            if (str_contains($name, 'generated::') || str_contains($route->uri(), 'telescope')) {
+            if (Str::contains($name, 'generated::') || Str::contains($route->uri(), 'telescope')) {
                 return [];
             }
             return [$name => $route->uri()];
