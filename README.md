@@ -13,17 +13,19 @@ A package to generate and manage routes for Vue applications from Laravel routes
 ### 1. Install via NPM
 
 Run the following command to install the package:
-
+```bash
 npm install vue-route-generator --save
-
+```
 ### 2. Add Laravel Service Provider
 
 Add the service provider to the `providers` array in `config/app.php`:
 
+```php
 'providers' => [
     // ...
     App\Providers\RouteServiceProvider::class,
 ],
+```
 
 ## Usage
 
@@ -41,6 +43,7 @@ In your Vue.js components, you can import the route utility and use it to get UR
 
 Example Component:
 
+```js
 <template>
   <div>
     <a :href="getRoute('auth.signin')">Sign In</a>
@@ -58,13 +61,14 @@ export default {
   }
 }
 </script>
+```
 
 ### 3. Adding Routes
 
 Make sure your Laravel routes are named appropriately in your `web.php` and `api.php` files.
 
 Example Web Routes (web.php):
-
+```php
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -74,20 +78,20 @@ Route::get('/', function () {
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
-
+```
 Example API Routes (api.php):
-
+```php
 use Illuminate\Support\Facades\Route;
 
 Route::post('/auth/signin', 'AuthController@signin')->name('auth.signin');
 Route::post('/auth/signup', 'AuthController@signup')->name('auth.signup');
-
+```
 ### 4. Re-generate Routes File
 
 Whenever you add new routes, run the Artisan command again to update the `routes.js` file:
-
+```bash
 php artisan generate:routes-file
-
+```
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request for any bugs or feature requests.
