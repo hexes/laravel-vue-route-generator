@@ -1,6 +1,4 @@
-export const routes = {
-    // Add more routes here
-};
+import { routes } from '../routes';
 
 export default function route(name, params = {}) {
     let path = routes[name] || '#';

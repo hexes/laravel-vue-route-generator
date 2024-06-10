@@ -6,6 +6,7 @@ A package to generate and manage routes for Vue applications from Laravel routes
 
 - Generates a JSON file with Laravel routes
 - Provides a simple Vue.js utility for accessing these routes
+- Supports dynamic route parameters
 - Includes an Artisan command to regenerate the routes file
 
 ## Installation
@@ -47,19 +48,17 @@ Example Component:
 <template>
   <div>
     <a :href="getRoute('auth.signin')">Sign In</a>
+    <a :href="getRoute('auth.signup')">Sign Up</a>
+    <a :href="getRoute('profile', { userId: '12345' })">Profile</a>
   </div>
 </template>
 
-<script>
-import { route } from 'vue-route-generator/dist/index.js';
+<script setup>
+import route from '../services/routeService';
 
-export default {
-  methods: {
-    getRoute(name) {
-      return route(name);
-    }
-  }
-}
+const getRoute = (name, params = {}) => {
+  return route(name, params);
+};
 </script>
 ```
 
@@ -78,6 +77,11 @@ Route::get('/', function () {
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
+
+Route::get('/profile/{userId}', function ($userId) {
+    // Profile logic here
+})->name('profile');
+
 ```
 Example API Routes (api.php):
 ```php
