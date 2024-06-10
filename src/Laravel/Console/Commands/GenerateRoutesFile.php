@@ -10,7 +10,7 @@ class GenerateRoutesFile extends Command
 {
     protected $signature = 'generate:routes-file
                             {--middleware=web,api : Comma-separated list of middleware to include (default: web,api)}
-                            {--output=resources/js/routes.ts : The output file for the routes (default: resources/js/routes.ts)}';
+                            {--output=resources/js/routes.js : The output file for the routes (default: resources/js/routes.js)}';
 
     protected $description = 'Generate routes.js file from Laravel routes';
 
@@ -24,7 +24,7 @@ class GenerateRoutesFile extends Command
         $middleware = $this->option('middleware') ?: 'web,api';
         $middlewares = explode(',', $middleware);
 
-        $outputPath = $this->option('output') ?: resource_path('js/routes.ts');
+        $outputPath = $this->option('output') ?: resource_path('js/routes.js');
 
         $routes = collect(Route::getRoutes())->filter(function ($route) use ($middlewares) {
             return count(array_intersect($middlewares, $route->middleware())) > 0;

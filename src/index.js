@@ -1,14 +1,4 @@
-export const routes = {
-    // Add more routes here
-};
+import route from './examples/services/routeService';
+import laravelVueRoute from './plugins/laravelVueRoute';
 
-export default function route(name, params = {}) {
-    let path = routes[name] || '#';
-
-    // Replace placeholders with actual values from params
-    Object.keys(params).forEach(key => {
-        path = path.replace(`{${key}}`, params[key]);
-    });
-
-    return path;
-}
+export { route, laravelVueRoute };
