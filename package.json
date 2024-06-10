@@ -1,0 +1,33 @@
+{
+  "name": "laravel-vue-route-generator",
+  "version": "1.0.0",
+  "description": "A package to generate and manage routes for Vue applications from Laravel routes.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "babel src --out-dir dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hexes/laravel-vue-route-generator.git"
+  },
+  "keywords": [
+    "vue",
+    "routes",
+    "laravel",
+    "generator"
+  ],
+  "author": "Marius Kirkliauskas <marius@kirkliauskas.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hexes/laravel-vue-route-generator/issues"
+  },
+  "homepage": "https://github.com/hexes/laravel-vue-route-generator#readme",
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.10",
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.10"
+  }
+}
