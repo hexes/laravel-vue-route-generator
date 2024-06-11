@@ -17,26 +17,17 @@ Run the following command to install the package:
 ```bash
 npm install laravel-vue-route-generator --save
 ```
-### 2. Add Laravel Service Provider
+### 2. Set Up Directory Structure and Copy Command
 
-Add the service provider to the `providers` array in `config/app.php`:
-```php
-'providers' => [
-    // ...
-    App\Providers\RouteServiceProvider::class,
-],
+Run the following command to set up the necessary directory structure and copy the command file:
+```bash
+npm run setup
 ```
+This will copy the example services directory to `resources/js/services` and the command file to `app/Console/Commands`.
+
 ## Usage
 
-### 1. Set Up Directory Structure
-
-Run the following command to set up the necessary directory structure:
-
-npm run setup
-
-This will copy the example `services` directory to `resources/js/services`.
-
-### 2. Run the Artisan Command
+### 1. Run the Artisan Command
 
 To generate the `routes.js` file, run the following Artisan command:
 ```bash
@@ -44,7 +35,7 @@ php artisan generate:routes-file
 ```
 This will create a `routes.js` file in the `resources/js` directory of your Laravel project.
 
-### 3. Import and Use the Plugin in `app.js`
+### 2. Import and Use the Plugin in `app.js`
 
 In your `app.js` file, import and use the plugin:
 ```js
@@ -59,7 +50,7 @@ app.use(laravelVueRoute);
 
 app.mount('#app');
 ```
-### 4. Use the Global Route Function in Your Components
+### 3. Use the Global Route Function in Your Components
 
 You can now use the global `route` function in your components without needing to import it each time:
 ```php
@@ -71,7 +62,7 @@ You can now use the global `route` function in your components without needing t
   </div>
 </template>
 ```
-### 5. Adding Routes
+### 4. Adding Routes
 
 Make sure your Laravel routes are named appropriately in your `web.php` and `api.php` files.
 
@@ -98,7 +89,7 @@ use Illuminate\Support\Facades\Route;
 Route::post('/auth/signin', 'AuthController@signin')->name('auth.signin');
 Route::post('/auth/signup', 'AuthController@signup')->name('auth.signup');
 ```
-### 6. Re-generate Routes File
+### 5. Re-generate Routes File
 
 Whenever you add new routes, run the Artisan command again to update the `routes.js` file:
 ```bash
