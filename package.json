@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "build": "cp src/index.js dist/index.js",
-    "setup": "mkdir -p resources/js/services && cp examples/services/routeService.js resources/js/services/routeService.js"
+    "setup": "mkdir -p resources/js/services && cp examples/services/routeService.js resources/js/services/routeService.js && mkdir -p app/Console/Commands && cp src/laravel/console/commands/GenerateRoutesFile.php app/Console/Commands/GenerateRoutesFile.php"
   },
   "repository": {
     "type": "git",
