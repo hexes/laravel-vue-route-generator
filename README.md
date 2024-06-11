@@ -61,7 +61,7 @@ app.mount('#app');
 ```
 ### 4. Use the Global Route Function in Your Components
 
-You can now use the global `$route` function in your components without needing to import it each time:
+You can now use the global `route` function in your components without needing to import it each time:
 ```php
 <template>
   <div>
