@@ -1,6 +1,6 @@
 {
   "name": "laravel-vue-route-generator",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A package to generate and manage routes for Vue applications from Laravel routes.",
   "main": "src/index.js",
   "bin": {
