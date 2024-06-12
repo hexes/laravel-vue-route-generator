@@ -3,6 +3,9 @@
   "version": "1.0.2",
   "description": "A package to generate and manage routes for Vue applications from Laravel routes.",
   "main": "src/index.js",
+  "bin": {
+    "laravel-vue-route-generator-setup": "./setup.js"
+  },
   "scripts": {
     "build": "cp src/index.js dist/index.js",
     "setup": "mkdir -p resources/js/services && cp examples/services/routeService.js resources/js/services/routeService.js && mkdir -p app/Console/Commands && cp src/Laravel/Console/Commands/GenerateRoutesFile.php app/Console/Commands/GenerateRoutesFile.php",
