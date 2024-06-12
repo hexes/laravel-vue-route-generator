@@ -21,7 +21,7 @@ npm install laravel-vue-route-generator --save
 
 Run the following command to set up the necessary directory structure and copy the command file:
 ```bash
-npm run setup
+npx laravel-vue-route-generator-setup
 ```
 This will copy the example services directory to `resources/js/services` and the command file to `app/Console/Commands`.
 

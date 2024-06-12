@@ -13,5 +13,5 @@ if (!fs.existsSync(servicesDir)) {
 }
 
 // Copy the files
-execSync(`cp ${path.resolve(__dirname, 'examples/services/routeService.js')} ${servicesDir}/routeService.js`);
-execSync(`mkdir -p ${path.dirname(commandFilePath)} && cp ${path.resolve(__dirname, 'src/Laravel/Console/Commands/GenerateRoutesFile.php')} ${commandFilePath}`);
+execSync(`cp ${path.resolve(__dirname, '../examples/services/routeService.js')} ${servicesDir}/routeService.js`);
+execSync(`mkdir -p ${path.dirname(commandFilePath)} && cp ${path.resolve(__dirname, '../src/Laravel/Console/Commands/GenerateRoutesFile.php')} ${commandFilePath}`);
